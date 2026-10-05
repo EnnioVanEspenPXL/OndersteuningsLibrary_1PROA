@@ -1,0 +1,187 @@
+--1
+SELECT
+Mnr,
+Naam
+FROM
+Medewerkers
+
+--2
+SELECT DISTINCT
+Locatie
+FROM
+Afdelingen
+
+--3
+SELECT
+Code,
+Omschrijving
+FROM
+Cursussen
+
+--4
+SELECT
+Naam + ' ' +  Voorn AS Naam, /* Dit geeft de volledige naam in 1 tabel */
+Functie
+FROM
+Medewerkers
+WHERE
+Functie='VERKOPER'
+
+--5
+SELECT
+Naam + ' ' +  Voorn AS Naam,
+Functie
+FROM
+Medewerkers
+WHERE
+Functie!='BOEKHOUDER'
+
+--6
+SELECT
+Naam + ' ' + Voorn AS Naam
+FROM
+Medewerkers
+WHERE
+Maandsal > 5000 AND Functie!='MANAGER'
+
+--7
+SELECT
+Naam + ' ' + Voorn AS Naam
+FROM
+Medewerkers
+WHERE
+Maandsal < 2500
+
+--8
+SELECT
+Naam
+FROM
+Afdelingen
+WHERE
+Hoofd=7698
+
+--9
+SELECT DISTINCT
+Functie
+FROM
+Medewerkers
+
+--10
+SELECT
+Mnr,
+Naam + ' ' + Voorn AS Naam
+FROM
+Medewerkers
+WHERE
+Functie='TRAINER'
+
+--11
+SELECT
+Naam + ' ' + Voorn AS Naam,
+Functie,
+Maandsal
+FROM
+Medewerkers
+WHERE
+Afd = 30 AND Maandsal > 2500
+
+--12
+SELECT
+Locatie
+FROM
+Afdelingen
+WHERE
+Hoofd = 7566
+
+--13
+SELECT
+Naam + ' ' + Voorn AS Naam
+FROM
+Medewerkers
+WHERE
+Afd = 10 OR Afd = 20
+
+--14
+SELECT
+Naam + ' ' + Voorn AS Naam
+FROM
+Medewerkers
+WHERE
+Naam LIKE '%N'
+
+--15
+SELECT
+Naam + ' ' + Voorn AS Naam
+FROM
+Medewerkers
+WHERE
+Naam LIKE '%oo%'
+
+--16
+SELECT
+Naam + ' ' + Voorn AS Naam,
+Maandsal AS [Huidig salaris],
+Maandsal * 1.1 AS [Toekomstig salaris]
+FROM
+Medewerkers
+
+--17
+SELECT
+Naam + ' ' + Voorn AS Naam,
+Maandsal
+FROM
+Medewerkers
+ORDER BY
+Maandsal DESC
+
+--18
+SELECT
+Naam + ' ' + Voorn AS Naam,
+Maandsal
+FROM
+Medewerkers
+WHERE
+(Maandsal BETWEEN 2000 AND 3000) AND
+(Maandsal != 3850) AND
+(Maandsal != 2600)
+ORDER BY
+Maandsal DESC
+
+--19
+SELECT
+Naam + ' ' + Voorn AS Naam,
+Maandsal
+FROM
+Medewerkers
+ORDER BY
+Functie,
+Naam
+
+--Teams oefeningen
+--1
+SELECT
+Naam + ' ' + Voorn AS Naam,
+Maandsal * 12 AS [Huidige jaarsalaris],
+Maandsal * 12 * 1.15 AS [Toekomstig jaarsalaris]
+FROM
+Medewerkers
+WHERE
+Maandsal > 3000
+
+--2
+SELECT
+Naam + ' ' + Voorn AS Naam,
+Maandsal * 12 AS [Huidige jaarsalaris],
+Maandsal * 12 + 1000 AS [Toekomstig jaarsalaris]
+FROM
+Medewerkers
+WHERE
+functie = 'BOEKHOUDER'
+
+--3
+SELECT
+Hoofd
+FROM
+Afdelingen
+WHERE
+Anr BETWEEN 30 AND 40
