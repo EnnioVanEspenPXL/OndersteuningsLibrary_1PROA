@@ -1,3 +1,9 @@
+/*
+De uitlijning is optioneel maar is hoedat ik de query's het overzichtelijkste vind
+alles dat tussen de "/* */" tekens staat zijn comments en zal door de server genegeerd
+worden.
+Hetzelfde met de nummering na "--"
+*/
 --1
 SELECT
 Mnr,
@@ -185,3 +191,14 @@ FROM
 Afdelingen
 WHERE
 Anr BETWEEN 30 AND 40
+
+--Extra (Berekining totaal Maandloon)
+SELECT
+Naam + ' ' + Voorn AS Naam,
+Maandsal AS Salaris,
+Comm AS commisie,
+coalesce(Maandsal + Comm, Maandsal, Comm) AS [Totaal maandloon]
+FROM
+Medewerkers
+ORDER BY
+[Totaal maandloon] DESC
