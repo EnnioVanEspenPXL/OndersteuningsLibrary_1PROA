@@ -27,24 +27,24 @@ namespace Galactic_Express
             Random random = new Random();
 
            // Opvragen informatie van user
-            do
-            {
-                isValid = true;
+            do // De do/while loops is iets dat ik zelf toegevoegd heb, ik zal comments achter alle code die optioneel is.
+            { //optioneel
+                isValid = true; //optioneel
                 Console.Write("Naam: ");
                 travelerName = Console.ReadLine().Trim();
-                if (travelerName.Length == 0)
+                if (travelerName.Length == 0)//optioneel
                 {
-                    Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine("Geef een geldige naam in");
-                    Console.ResetColor();
-                    isValid = false;
-                }
-            }
-            while (!isValid);
+                    Console.ForegroundColor = ConsoleColor.Red;//optioneel
+                    Console.WriteLine("Geef een geldige naam in");//optioneel
+                    Console.ResetColor();//optioneel
+                    isValid = false;//optioneel
+                }//optioneel
+            }//optioneel
+            while (!isValid);//optioneel
 
-            do
-            {
-                isValid = true;
+            do//optioneel
+            {//optioneel
+                isValid = true;//optioneel
                 Console.Write("Bestemming: ");
                 travelerDestination = Console.ReadLine().Trim();
                 if (travelerDestination.Length < 3)
@@ -52,43 +52,43 @@ namespace Galactic_Express
                     Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("Geef een bestemming naam met minstens 3 tekens.");
                     Console.ResetColor();
-                    isValid = false;
+                    isValid = false;//optioneel
 
                 }
-            }
-            while (!isValid);
+            }//optioneel
+            while (!isValid);//optioneel
 
-            do
-            {
-                isValid = true;
+            do//optioneel
+            {//optioneel
+                isValid = true;//optioneel
                 Console.Write("Vertrek datum (yyyy-mm-dd): ");
                 bool isValidDepartureDate = DateTime.TryParse(Console.ReadLine(), out departureDate);
-                if (!isValidDepartureDate || departureDate <= DateTime.Today)
-                {
+                if (!isValidDepartureDate || departureDate <= DateTime.Today)//optioneel
+                {//optioneel
                     Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("Geef een geldige datum in.");
                     Console.ResetColor();
-                    isValid = false;
+                    isValid = false;//optioneel
 
-                }
-            }
-            while (!isValid);
+                }//optioneel
+            }//optioneel
+            while (!isValid);//optioneel
 
-            do
-            {
-                isValid = true;
+            do//optioneel
+            {//optioneel
+                isValid = true;//optioneel
                 Console.Write("Gewicht van bagage (kg): ");
                 bool isValidBagageWeight = double.TryParse(Console.ReadLine(), out weightOfBagage);
-                if (!isValidBagageWeight)
-                {
-                    Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine("Geef een geldig gewicht in");
-                    Console.ResetColor();
-                    isValid = false;
+                if (!isValidBagageWeight)//optioneel
+                {//optioneel
+                    Console.ForegroundColor = ConsoleColor.Red;//optioneel
+                    Console.WriteLine("Geef een geldig gewicht in");//optioneel
+                    Console.ResetColor();//optioneel
+                    isValid = false;//optioneel
 
-                }
-            }
-            while (!isValid);
+                }//optioneel
+            }//optioneel
+            while (!isValid);//optioneel
 
             // Opschooning/berekening gegevens
             destinationCode = travelerDestination.Substring(0, 3).ToUpper();
